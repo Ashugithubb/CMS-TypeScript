@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="/JAVASCRIPT/login.js"></script>
+  <title>CMS</title>
+</head>
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Login {
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 360px;
+    }
+
+    .Login img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .btn {
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.3s;
+    }
+
+    .signin {
+      background-color: #7f4aa4;
+      color: white;
+    }
+
+    .signin:hover {
+      background-color: #a97acc;
+    }
+
+    .signup {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    .signup:hover {
+      background-color: #0b7dda;
+    }
+</style>
+<body>
+  <div class="Login">
+    <img src="zenmonk_logo.jpg" alt="Logo" />
+    <form onsubmit="loginUser(event)">
+      <input type="email" id="email" placeholder="Enter Email ID" />
+      <input type="password" id="password" placeholder="Password" />
+      <button class="btn signin">Sign in</button>
+      <button type="button" class="btn signup" onclick="window.location.href='/HTML/signup.html'">Sign up</button>
+    </form>
+  </div>
+</body>
+<script>
+  function loginUser(e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const validUser = users.find(user => user.email === email && user.password === pass);
+
+  if (validUser) {
+    alert("Login Successful!");
+    window.location.href = "/HTML/dashboard.html";
+  } else {
+    alert("Invalid credentials!");
+  }
+}
+
+</script>
+</html>
+

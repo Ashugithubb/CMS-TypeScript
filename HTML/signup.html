@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="/JAVASCRIPT/signup.js"></script>
+  <title>Sign Up - CMS</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .Signup {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      width: 300px;
+    }
+    .btn {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+    }
+    .signup {
+      background-color: #2196F3;
+      color: white;
+    }
+    .back {
+      background-color: #7f4aa4;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="Signup">
+    <img src="zenmonk_logo.jpg" alt="Logo" width="150" />
+    <form onsubmit="saveUser(event)">
+      <input type="email" id="email"   placeholder="Enter Email ID" /><br><br>
+      <input type="password" id="password" placeholder="Password" /><br><br>
+      <input type="password" id="confirm"  placeholder="Confirm Password" /><br><br>
+      <button type="submit" class="btn signup">Sign up</button><br><br>
+      <button type="button" class="btn back" onclick="window.location.href='/HTML/login.html'">Back to Sign in</button>
+    </form>
+  </div>
+</body>
+</html>
