@@ -14,7 +14,7 @@ function saveUser(e: Event): void {
     return;
   }
 
-  // Define the user type
+
   type User = {
     email: string;
     password: string;
@@ -32,5 +32,5 @@ function saveUser(e: Event): void {
   localStorage.setItem("users", JSON.stringify(users));
 
   alert("Signup successful! Now login.");
-  window.location.href = "login.html";
+  window.location.href = "HTML/login.html";
 }

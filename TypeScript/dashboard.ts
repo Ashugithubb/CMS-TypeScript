@@ -168,7 +168,7 @@ function importCSV(event: Event): void {
 function logout(): void {
   localStorage.clear();
   sessionStorage.clear();
-  window.location.href = "index.html";
+  window.location.href = "/HTML/login.html";
 }
 
 function filterByType(): void {
